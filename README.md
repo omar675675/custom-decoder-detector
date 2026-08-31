@@ -1,5 +1,11 @@
 > This is a showcase of a custom decoder/detector module. Its source code cannot be shown here due to confidentiality.
 
+This is the decoder and detection core of a larger computer vision pipeline, benchmarked here in isolation against two standard approaches to building the same thing.
+
+**Stack:** C++ · CUDA · TensorRT · GStreamer · YOLO11
+
+**Not included:** engine source, build/optimization configuration, and the platform/integration layer this module runs inside.
+
 # 7 streams, one laptop GPU
 
 This pipeline runs **7 simultaneous 1080p video streams** through a YOLO11
@@ -102,3 +108,20 @@ Each clip tiles all 7 streams with the live per-camera and total FPS burnt in.
 | OpenCV + PyTorch | GPU decode + PyTorch | This pipeline |
 |:--:|:--:|:--:|
 | <video src="https://github.com/user-attachments/assets/0f138814-dd21-4e14-85ca-cdfd76ef546f" controls width="440"></video> | <video src="https://github.com/user-attachments/assets/680ff6ab-b204-49be-869e-c87aba4d0103" controls width="440"></video> | <video src="https://github.com/user-attachments/assets/c8ebd5d1-5ad4-47b7-a42f-43d43108754a" controls width="440"></video> |
+
+---
+
+## Environment
+
+- GPU: RTX 4060 Laptop, 8 GB
+- CUDA: 13.2
+- TensorRT: 10.16.1
+- Driver: 595.84 
+- OS: Ubuntu 24.04
+
+---
+
+## Contact
+
+omaroa91@gmail.com
+www.linkedin.com/in/omar-yehya
