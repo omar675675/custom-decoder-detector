@@ -1,0 +1,13 @@
+=== ocv_n  (ocv.py --weights models/yolo11n.pt)  22:27:26 ===
+=== old_n  (old.py --weights models/yolo11n.pt)  22:28:33 ===
+=== new_n  (new.py --engine  models/yolo11n.engine)  22:29:53 ===
+=== ocv_m  (ocv.py --weights models/yolo11m.pt)  22:30:18 ===
+=== old_m  (old.py --weights models/yolo11m.pt)  22:31:39 ===
+=== new_m  (new.py --engine  models/yolo11m.engine)  22:33:00 ===
+trimmed 5.49s from ocv_n.mp4 (raw 36.600000s)
+trimmed 6.42s from old_n.mp4 (raw 42.800000s)
+trimmed 2.00s from new_n.mp4 (raw 13.166667s)
+trimmed 6.61s from ocv_m.mp4 (raw 44.066667s)
+trimmed 6.79s from old_m.mp4 (raw 45.300000s)
+trimmed 2.18s from new_m.mp4 (raw 14.533333s)
+=== ALL DONE 22:33:31 ===

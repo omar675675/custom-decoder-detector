@@ -1,0 +1,71 @@
+================================================================================
+ 3-WAY DECODE / INFERENCE BENCHMARK  —  raw metrics
+ Same model across the three configs, run once per size.
+================================================================================
+
+Hardware   : NVIDIA GeForce RTX 4060 Laptop GPU (8 GB), laptop
+Sources    : 7 local 1080p H.264 .mp4 clips
+             cars1 @25   cars2 @30   cars3 @30   dogs1 @30
+             people1 @60 people2 @30 people3 @60
+Model      : YOLO11n and YOLO11m, FP16 (A/B run the .pt with half=True;
+             C runs the exported engine)
+Recording  : every run composites the 7-tile mosaic and H.264-encodes it
+             (a fixed cost carried by all three)
+Metric     : "sustained FPS" = detector invocations per second at steady state
+             (median of the per-second aggregate).
+
+Configurations:
+  A  OpenCV + PyTorch        —  cv2.VideoCapture (CPU/FFmpeg) + YOLO11 (PyTorch)
+  B  GPU decode + PyTorch    —  hardware-accelerated decode   + YOLO11 (PyTorch)
+  C  This pipeline           —  hardware-accelerated decode   + optimized engine
+
+
+********************************************************************************
+ YOLO11n  (nano)
+********************************************************************************
+                              A OpenCV+PT   B GPU+PT     C this pipeline
+  sustained aggregate FPS      322          240          522
+  per-stream FPS (min..max)    45.7..65.1   34.8..49.7   71.7..116.8
+  GPU utilisation (mean)       ~32 %        ~35 %        ~66 %
+  system RAM (RSS)             3 279 MiB    2 860 MiB    1 089 MiB
+  CPU (median)                 ~573 %       ~300 %       ~210 %
+  GPU memory                   330 MiB      712 MiB      1 064 MiB
+
+  per-stream avg fps:
+    A  src0 45.9  src1 46.3  src2 46.3  src3 47.3  src4 65.1  src5 45.7  src6 65.0
+    B  src0 34.9  src1 35.1  src2 35.1  src3 35.6  src4 49.7  src5 34.8  src6 49.7
+    C  src0 71.7  src1 73.5  src2 73.9  src3 73.9  src4 114.4 src5 76.6  src6 116.8
+
+  videos: bench/ocv_n.mp4   bench/old_n.mp4   bench/new_n.mp4
+
+
+********************************************************************************
+ YOLO11m  (medium)
+********************************************************************************
+                              A OpenCV+PT   B GPU+PT     C this pipeline
+  sustained aggregate FPS      168          149          284
+  per-stream FPS (min..max)    23.6..24.1   20.9..21.1   40.3..65.7
+  GPU utilisation (mean)       ~62 %        ~60 %        ~100 %
+  system RAM (RSS)             3 256 MiB    2 842 MiB    1 095 MiB
+  CPU (median)                 ~380 %       ~240 %       ~580 %
+  GPU memory                   646 MiB      1 028 MiB    1 324 MiB
+
+  per-stream avg fps:
+    A  src0 23.6  src1 24.1  src2 24.1  src3 24.1  src4 24.1  src5 24.1  src6 24.1
+    B  src0 20.9  src1 21.1  src2 21.1  src3 21.1  src4 21.1  src5 21.1  src6 21.1
+    C  src0 40.3  src1 41.0  src2 41.2  src3 41.5  src4 65.7  src5 41.2  src6 65.0
+
+  videos: bench/ocv_m.mp4   bench/old_m.mp4   bench/new_m.mp4
+
+
+================================================================================
+ NOTES
+================================================================================
+ * Same model (both sizes) is used for all three configs.
+ * C is a real-time pipeline: it runs at its steady rate and does not block its
+   decoders, so its FPS reflects sustained analysis throughput.
+ * Detection counts vary between the FFmpeg path (A) and the hardware path
+   (B, C) because the two hand the model slightly different pixels (YUV colour
+   range). Not a throughput signal, so not tabulated.
+ * Every figure includes compositing and encoding the 7-tile mosaic each run.
+================================================================================
