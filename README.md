@@ -95,8 +95,6 @@ Each clip tiles all 7 streams with the live per-camera and total FPS burnt in.
 
 
 
-
-
 | OpenCV + PyTorch | GPU decode + PyTorch | This pipeline |
 |:--:|:--:|:--:|
 | <video src="https://github.com/user-attachments/assets/5c11ac49-f2a6-4be8-8c17-20c3ae9743d1" poster="bench/ocv_n_poster.jpg" controls width="440"></video> | <video src="https://github.com/user-attachments/assets/a31663de-bef1-47c2-8e55-3c42e4afe54f" poster="bench/old_n_poster.jpg" controls width="440"></video> | <video src="https://github.com/user-attachments/assets/42db8d08-f111-4f5b-a359-e9062491d8ac" poster="bench/new_n_poster.jpg" controls width="440"></video> |
@@ -105,4 +103,4 @@ Each clip tiles all 7 streams with the live per-camera and total FPS burnt in.
 
 | OpenCV + PyTorch | GPU decode + PyTorch | This pipeline |
 |:--:|:--:|:--:|
-| <video src="bench/ocv_m.mp4" poster="bench/ocv_m_poster.jpg" controls width="440"></video> | <video src="bench/old_m.mp4" poster="bench/old_m_poster.jpg" controls width="440"></video> | <video src="bench/new_m.mp4" poster="bench/new_m_poster.jpg" controls width="440"></video> |
+| <video src="https://github.com/user-attachments/assets/0f138814-dd21-4e14-85ca-cdfd76ef546f" poster="bench/ocv_m_poster.jpg" controls width="440"></video> | <video src="https://github.com/user-attachments/assets/680ff6ab-b204-49be-869e-c87aba4d0103" poster="bench/old_m_poster.jpg" controls width="440"></video> | <video src="https://github.com/user-attachments/assets/c8ebd5d1-5ad4-47b7-a42f-43d43108754a" poster="bench/new_m_poster.jpg" controls width="440"></video> |
