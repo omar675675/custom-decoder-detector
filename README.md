@@ -95,9 +95,12 @@ Each clip tiles all 7 streams with the live per-camera and total FPS burnt in.
 
 
 
+
+
+
 | OpenCV + PyTorch | GPU decode + PyTorch | This pipeline |
 |:--:|:--:|:--:|
-| <video src="https://github.com/user-attachments/assets/5c11ac49-f2a6-4be8-8c17-20c3ae9743d1" poster="bench/ocv_n_poster.jpg" controls width="440"></video> | <video src="https://github.com/user-attachments/assets/a31663de-bef1-47c2-8e55-3c42e4afe54f" poster="bench/old_n_poster.jpg" controls width="440"></video> | <video src="https://github.com/user-attachments/assets/42db8d08-f111-4f5b-a359-e9062491d8ac" poster="bench/new_n_poster.jpg" controls width="440"></video> |
+| <video src="https://github.com/user-attachments/assets/5c11ac49-f2a6-4be8-8c17-20c3ae9743d1" poster="<img width="1280" height="792" alt="ocv_n_poster" src="https://github.com/user-attachments/assets/6fc10b3e-5e11-44d1-b356-ff78ed008ea9" />" controls width="440"></video> | <video src="https://github.com/user-attachments/assets/a31663de-bef1-47c2-8e55-3c42e4afe54f" poster="<img width="1280" height="792" alt="old_n_poster" src="https://github.com/user-attachments/assets/81aa0139-8664-4b69-9c5e-a82c8a43f7bd" />" controls width="440"></video> | <video src="https://github.com/user-attachments/assets/42db8d08-f111-4f5b-a359-e9062491d8ac" poster="<img width="1280" height="792" alt="new_n_poster" src="https://github.com/user-attachments/assets/e8758f21-230a-4d8c-a4e9-000b8de84b59" />" controls width="440"></video> |
 
 ### YOLO11m
 
