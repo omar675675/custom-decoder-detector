@@ -93,7 +93,11 @@ Each clip tiles all 7 streams with the live per-camera and total FPS burnt in.
 
 | OpenCV + PyTorch | GPU decode + PyTorch | This pipeline |
 |:--:|:--:|:--:|
-| <video src="bench/ocv_n.mp4" poster="bench/ocv_n_poster.jpg" controls width="440"></video> | <video src="bench/old_n.mp4" poster="bench/old_n_poster.jpg" controls width="440"></video> | <video src="bench/new_n.mp4" poster="bench/new_n_poster.jpg" controls width="440"></video> |
+| <video src="bench/ocv_n.
+
+https://github.com/user-attachments/assets/6204157b-3587-4178-ba5e-22928599d5ea
+
+mp4" poster="bench/ocv_n_poster.jpg" controls width="440"></video> | <video src="bench/old_n.mp4" poster="bench/old_n_poster.jpg" controls width="440"></video> | <video src="bench/new_n.mp4" poster="bench/new_n_poster.jpg" controls width="440"></video> |
 
 ### YOLO11m
 
